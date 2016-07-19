@@ -33,6 +33,18 @@ public class YourAdapter extends ClearRecyclerAdapter<YourObject> {
 }
 ```
 
+Modify data int the adapter with this:
+```java
+adapter.set(List<T> items);
+adapter.addAll(List<T> items);
+adapter.add(T item);
+adapter.add(T item, int position);
+adapter.update(T item);
+adapter.remove(T item);
+adapter.clear();
+List<T> items = adapter.getItems();
+```
+
 You can specify click listeners for items in a classic way of extending ViewHolder:
 ```java
 public class YourViewHolder extends ClearRecyclerAdapter.ClearRecyclerViewHolder<YourObject> 
