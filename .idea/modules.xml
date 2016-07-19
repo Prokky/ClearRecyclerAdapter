@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ClearRecyclerAdapter.iml" filepath="$PROJECT_DIR$/ClearRecyclerAdapter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clearrecycleradapter/library.iml" filepath="$PROJECT_DIR$/clearrecycleradapter/library.iml" />
     </modules>
   </component>
 </project>
