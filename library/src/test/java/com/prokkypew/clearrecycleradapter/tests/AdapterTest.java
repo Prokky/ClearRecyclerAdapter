@@ -21,9 +21,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Arrays.asList;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
@@ -194,6 +197,18 @@ public class AdapterTest {
 
 
     @Test
+    public void test_adapterRemoveFail() {
+        TestObject obj = new TestObject("123");
+        adapter.set(new ArrayList<>(Arrays.asList(mock(TestObject.class), mock(TestObject.class))));
+
+        adapter.remove(obj);
+
+        assertSame(adapter.getItemCount(), 2);
+        assertSame(adapter.getItems().size(), 2);
+    }
+
+
+    @Test
     public void test_adapterUpdate() {
         TestObject obj = new TestObject("123");
         adapter.set(new ArrayList<>(Arrays.asList(mock(TestObject.class), obj)));
@@ -208,5 +223,19 @@ public class AdapterTest {
         verifyNoMoreInteractions(observer);
 
         assertEquals(obj.text, adapter.getItems().get(1).text);
+    }
+
+
+    @Test
+    public void test_adapterUpdateFail() {
+        TestObject obj = new TestObject("123");
+        adapter.set(new ArrayList<>(Arrays.asList(mock(TestObject.class), mock(TestObject.class))));
+
+        obj.text = "new";
+        adapter.update(obj);
+
+        for (TestObject o : adapter.getItems()) {
+            assertThat(o.text, not(equalTo(obj.text)));
+        }
     }
 }
