@@ -1,4 +1,4 @@
-package com.prokky.clearrecycleradapter;
+package com.prokkypew.clearrecycleradapter;
 
 import org.junit.Test;
 
