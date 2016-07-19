@@ -7,35 +7,76 @@ Create your Adapter class which extends ClearRecyclerAdapter and implement some 
 
 public class YourAdapter extends ClearRecyclerAdapter<YourObject> {
     @Override
-    protected ClearRecyclerViewHolder getViewHolder(View view) {
+    protected ClearRecyclerViewHolder getViewHolder(View view, int viewType) {
         return new YourViewHolder(view);
     }
 
     @Override
-    protected int getItemLayoutId() {
+    protected int getItemLayout(int viewType) {
         return R.layout.your_list_item;
     }
 
-    public class YourViewHolder extends ClearRecyclerAdapter.ClearRecyclerViewHolder {
+    public class YourViewHolder extends ClearRecyclerAdapter.ClearRecyclerViewHolder<YourObject> {
         @BindView(R.id.title)
         TextView titleText;
 
         public YourViewHolder(View itemView) {
             super(itemView);
+            Butterknife.bind(this, v); //just do it any way you like
         }
 
         @Override
         public void bind(YourObject item) {
-            titleText.setText(item.name);
+            titleText.setText(item.name); //onBindViewHolder code here
         }
     }
 }
 ```
 
-You can specify click listeners for items:
+You can specify click listeners for items in a classic way of extending ViewHolder:
 ```java
-adapter.setOnHolderClickListener(...);
-adapter.setOnHolderLongClickListener(...);
+public class YourViewHolder extends ClearRecyclerAdapter.ClearRecyclerViewHolder<YourObject> 
+                            implements View.OnClickListener{
+
+
+        public YourViewHolder(View itemView) {
+            super(itemView);
+            ...
+            itemView.setOnClickListener(this);
+        }
+        
+        ...
+        
+        @Override
+        public void onClick(View view) {
+            //CLICK!
+        }
+    }
+```
+
+If you need the View types for your adapter, feel free to use viewType parameter in getViewHolder(View, int) and getItemLayout(int) functions. Don't forget to override getItemViewType(int) int your adapter:
+```java
+    @Override
+    protected ClearRecyclerViewHolder getViewHolder(View view, int viewType) {
+        switch(viewType){
+            case FIRST: return new FirstViewHolder(view);
+            case SECOND:
+            default: return new SecondViewHolder(view);
+        }
+    }
+
+    @Override
+    protected int getItemLayout(int viewType) {
+        switch(viewType){
+            case FIRST: return R.layout.first_layout;
+            case SECOND:
+            default: return R.layout.second_layout;
+        }
+    }
+    @Override
+    public int getItemViewType(int position) {
+        // return viewtype for position
+    }
 ```
 
 And you are done!
