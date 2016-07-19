@@ -1,8 +1,10 @@
-package com.prokkypew.clearrecycleradapter;
+package com.prokkypew.clearrecycleradapter.tests;
 
 import android.view.View;
 import android.widget.TextView;
 
+import com.prokkypew.clearrecycleradapter.BuildConfig;
+import com.prokkypew.clearrecycleradapter.R;
 import com.prokkypew.clearrecycleradapter.utils.TestObject;
 import com.prokkypew.clearrecycleradapter.utils.TestViewHolder;
 
@@ -35,7 +37,7 @@ public class ViewHolderTest {
     }
 
     @Test
-    public void bind_shouldSetTitle() {
+    public void test_bind() {
         testViewHolder.bind(testObject);
         verify(textView).setText(testObject.text);
     }

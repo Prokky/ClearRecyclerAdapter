@@ -1,8 +1,9 @@
 # ClearRecyclerAdapter
-Boilerplate code free Adapter for RecyclerView.
 
 [![Build Status](https://travis-ci.org/Prokky/ClearRecyclerAdapter.svg?branch=master)](https://travis-ci.org/Prokky/ClearRecyclerAdapter)
 [![codecov](https://codecov.io/gh/Prokky/ClearRecyclerAdapter/branch/master/graph/badge.svg)](https://codecov.io/gh/Prokky/ClearRecyclerAdapter)
+
+Boilerplate code free Adapter for RecyclerView.
 
 ##Usage
 Create your Adapter class which extends ClearRecyclerAdapter and implement some functions.
