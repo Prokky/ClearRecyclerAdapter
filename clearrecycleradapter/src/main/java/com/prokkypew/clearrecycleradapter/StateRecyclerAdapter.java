@@ -42,16 +42,20 @@ public abstract class StateRecyclerAdapter<T extends Object> extends ClearRecycl
     }
 
     @Override
-    public int getItemViewType(int position) {
+    public final int getItemViewType(int position) {
         switch (currentState) {
             case ITEMS:
-                return 0;
+                return getViewType(position);
             case PROGRESS:
-                return 1;
+                return -999;
             case ERROR:
             default:
-                return 2;
+                return -998;
         }
+    }
+
+    public int getViewType(int position) {
+        return 0;
     }
 
     public abstract int getErrorLayoutId();
