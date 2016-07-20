@@ -6,6 +6,12 @@
 Boilerplate code free Adapter for RecyclerView.
 
 ##Usage
+To include this library to your project add dependency in **build.gradle** file:
+```java
+dependencies {
+    compile 'com.prokkypew:clearrecycleradapter:1.0.0'
+}
+```
 Create your Adapter class which extends ClearRecyclerAdapter and implement some functions.
 ```java
 
