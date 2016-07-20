@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Prokky/ClearRecyclerAdapter.svg?branch=master)](https://travis-ci.org/Prokky/ClearRecyclerAdapter)
 [![codecov](https://codecov.io/gh/Prokky/ClearRecyclerAdapter/branch/master/graph/badge.svg)](https://codecov.io/gh/Prokky/ClearRecyclerAdapter)
+[ ![Download](https://api.bintray.com/packages/prokky/maven/clearrecycleradapter/images/download.svg) ](https://bintray.com/prokky/maven/clearrecycleradapter/_latestVersion)
 
 Boilerplate code free Adapter for RecyclerView.
 
