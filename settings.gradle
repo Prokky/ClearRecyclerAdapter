@@ -1,1 +1,1 @@
-include ':clearrecycleradapter'
+include ':clearrecycleradapter', ':sample'
