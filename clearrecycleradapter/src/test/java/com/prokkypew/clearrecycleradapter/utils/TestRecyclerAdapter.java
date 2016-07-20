@@ -27,7 +27,7 @@ public class TestRecyclerAdapter extends ClearRecyclerAdapter<TestObject> {
     }
 
     @Override
-    protected int getItemLayout(int viewType) {
+    protected int getItemLayoutId(int viewType) {
         return R.layout.empty_layout;
     }
 }

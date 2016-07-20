@@ -27,7 +27,7 @@ public abstract class ClearRecyclerAdapter<T extends Object> extends RecyclerVie
     @Override
     public ClearRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(getItemLayout(viewType), parent, false);
+                .inflate(getItemLayoutId(viewType), parent, false);
         return getViewHolder(view, viewType);
     }
 
@@ -90,7 +90,7 @@ public abstract class ClearRecyclerAdapter<T extends Object> extends RecyclerVie
 
     protected abstract ClearRecyclerViewHolder getViewHolder(View view, int viewType);
 
-    protected abstract int getItemLayout(int viewType);
+    protected abstract int getItemLayoutId(int viewType);
 
 
 }
