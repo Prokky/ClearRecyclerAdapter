@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/Prokky/ClearRecyclerAdapter.svg?branch=master)](https://travis-ci.org/Prokky/ClearRecyclerAdapter)
 [![codecov](https://codecov.io/gh/Prokky/ClearRecyclerAdapter/branch/master/graph/badge.svg)](https://codecov.io/gh/Prokky/ClearRecyclerAdapter)
 [ ![Download](https://api.bintray.com/packages/prokky/maven/clearrecycleradapter/images/download.svg) ](https://bintray.com/prokky/maven/clearrecycleradapter/_latestVersion)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ClearRecyclerAdapter-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3961)
 
 Boilerplate code free Adapter for RecyclerView. Now supports different states for easy handling errors/progress.
 
